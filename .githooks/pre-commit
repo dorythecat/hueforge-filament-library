@@ -9,7 +9,7 @@ SCRIPT="generate_manifest.py"
 
 # CONFIGURE THESE:
 SOURCE_NAME="Dory's Curated Filaments"
-BASE_URL="https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/main/libraries"
+BASE_URL="https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/head/master/libraries"
 
 staged=$(git diff --cached --name-only)
 
