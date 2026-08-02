@@ -1,0 +1,13 @@
+{
+  "Filaments": [
+    {
+      "Brand": "Sakata 3D PLA 850",
+      "Color": "#000000",
+      "Name": "Black",
+      "Owned": false,
+      "Transmissivity": 0.1,
+      "Type": "PLA",
+      "uuid": "{sakata3d-d0ry-0208-2026-PLA850Black0}"
+    }
+  ]
+}

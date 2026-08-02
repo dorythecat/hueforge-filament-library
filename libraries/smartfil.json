@@ -1,0 +1,106 @@
+{
+  "Filaments": [
+    {
+      "Brand": "Smartfil PLA Basic",
+      "Color": "#000000",
+      "Name": "Black",
+      "Owned": false,
+      "Transmissivity": 0.2,
+      "Type": "PLA",
+      "uuid": "{smartfil-d0ry-0208-2026-PLABasicBlak}"
+    },
+    {
+      "Brand": "Smartfil PLA Basic",
+      "Color": "#ffff00",
+      "Name": "Yellow",
+      "Owned": false,
+      "Transmissivity": 5.8,
+      "Type": "PLA",
+      "uuid": "{smartfil-d0ry-0208-2026-PLABasicYelo}"
+    },
+    {
+      "Brand": "Smartfil PLA Recycled",
+      "Color": "#614e2f",
+      "Name": "Gold",
+      "Owned": false,
+      "Transmissivity": 0.4,
+      "Type": "PLA",
+      "uuid": "{smartfil-d0ry-0208-2026-PLARecycGold}"
+    },
+    {
+      "Brand": "Smartfil PLA Recycled",
+      "Color": "#808080",
+      "Name": "Grey",
+      "Owned": false,
+      "Transmissivity": 0.2,
+      "Type": "PLA",
+      "uuid": "{smartfil-d0ry-0208-2026-PLARecycGrey}"
+    },
+    {
+      "Brand": "Smartfil PLA Recycled",
+      "Color": "#f99db9",
+      "Name": "Coral",
+      "Owned": false,
+      "Transmissivity": 1.6,
+      "Type": "PLA",
+      "uuid": "{smartfil-d0ry-0208-2026-PLARecycCorl}"
+    },
+    {
+      "Brand": "Smartfil PLA Recycled",
+      "Color": "#642124",
+      "Name": "Grenade",
+      "Owned": false,
+      "Transmissivity": 0.4,
+      "Type": "PLA",
+      "uuid": "{smartfil-d0ry-0208-2026-PLARecycGren}"
+    },
+    {
+      "Brand": "Smartfil PLA",
+      "Color": "#4c4169",
+      "Name": "Glitter Violet",
+      "Owned": false,
+      "Transmissivity": 2.5,
+      "Type": "PLA+",
+      "uuid": "{smartfil-d0ry-0208-2026-PLAGlitrViol}"
+    },
+    {
+      "Brand": "Smartfil PLA",
+      "Color": "#c0c0c0",
+      "Name": "Green Glow",
+      "Owned": false,
+      "Transmissivity": 100.0,
+      "Type": "PLA+",
+      "Secondary_Type": 2,
+      "Secondary_Color": "#00ff00",
+      "Secondary_Strength": 1.69,
+      "uuid": "{smartfil-d0ry-0208-2026-PLAGreenGlow}"
+    },
+    {
+      "Brand": "Smartfil PLA Marble",
+      "Color": "#ffffff",
+      "Name": "White",
+      "Owned": false,
+      "Transmissivity": 1.5,
+      "Type": "PLA+",
+      "uuid": "{smartfil-d0ry-0208-2026-PLAMarblWhit}"
+    },
+    {
+      "Brand": "Smartfil PETG",
+      "Color": "#ffffff",
+      "Name": "Natural",
+      "Owned": false,
+      "Transmissivity": 100.0,
+      "Type": "PETG",
+      "uuid": "{smartfil-d0ry-0208-2026-PETGNatural0}"
+    },
+    {
+      "Brand": "Smartfil Flex 93A",
+      "Color": "#000000",
+      "Name": "True Black",
+      "Owned": false,
+      "Transmissivity": 0.1,
+      "Type": "TPU",
+      "uuid": "{smartfil-d0ry-0208-2026-TPUTrueBlack}"
+    }
+  ]
+}

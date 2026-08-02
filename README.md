@@ -1,96 +1,6 @@
-# HueForge Community Library Template
+# Dory's Curated Filaments
 
-A template repository for publishers creating community filament libraries for HueForge 3D lithophane software.
-
-## Quick Start
-
-1. **Clone or fork** this template
-2. **Add your filaments** as JSON files to `libraries/`
-3. **Configure the hook** (one-time setup)
-4. **Push to GitHub** and register the manifest URL in HueForge
-
-## Repository Structure
-
-```
-hueforge-community-library-template/
-├── libraries/                    # Your filament library JSON files go here
-│   ├── .gitkeep
-│   ├── my-pla-filaments.json
-│   └── specialty-colors.json
-├── .githooks/
-│   └── pre-commit               # Auto-generates manifest.json on commit
-├── generate_manifest.py         # Standalone manifest generation script
-├── manifest.json                # Generated library index (don't edit manually)
-└── README.md
-```
-
-## Adding Filaments
-
-1. Create a `.json` filament library file in `libraries/` following HueForge's filament format
-2. The `generate_manifest.py` script will automatically discover and index it
-
-**Filament JSON format** — each file must contain a `Filaments` array where each entry has:
-
-```json
-{
-  "Filaments": [
-    {
-      "Brand": "Your Vendor PLA",
-      "Color": "#ffffff",
-      "Name": "White",
-      "Owned": false,
-      "Transmissivity": 10.0,
-      "Type": "PLA",
-      "uuid": "{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}"
-    }
-  ]
-}
-```
-
-**Required fields:** `Brand`, `Color` (hex), `Name`, `Owned`, `Transmissivity`, `Type`, `uuid`
-
-**Optional fields:** `Tags` (array of strings), `Secondary_Color`, `Secondary_Strength`, `Secondary_Type` (for dual-color/silk filaments)
-
-Generate a unique UUID for each filament entry — no two filaments should share a UUID across any library.
-
-## One-Time Setup
-
-After cloning this repository, enable the auto-commit hook:
-
-```bash
-git config core.hooksPath .githooks
-```
-
-This enables automatic manifest regeneration whenever you commit changes to `libraries/`.
-
-## Configuration
-
-Edit `.githooks/pre-commit` and set:
-
-- **`SOURCE_NAME`**: The human-readable name for your collection (e.g., "Acme PLA Library")
-- **`BASE_URL`**: The raw GitHub URL to your `libraries/` folder (e.g., `https://raw.githubusercontent.com/your-username/your-repo/main/libraries`)
-
-**Do not include "HueForge" in `SOURCE_NAME`** — the community library system automatically prepends "[Unofficial]" to source names that don't contain it.
-
-### Example Configuration
-
-```bash
-# In .githooks/pre-commit:
-SOURCE_NAME="Acme Premium PLA Collection"
-BASE_URL="https://raw.githubusercontent.com/acme/hueforge-filaments/main/libraries"
-```
-
-## Generating the Manifest Manually
-
-If you prefer not to use the git hook, or for testing:
-
-```bash
-python generate_manifest.py \
-  --source-name "My PLA Collection" \
-  --base-url https://raw.githubusercontent.com/your-username/your-repo/main/libraries
-```
-
-This scans `libraries/`, counts filaments in each `.json` file, computes SHA256 checksums, and writes `manifest.json`.
+This repository serves as a HueForge community library built of the filaments I've been able to test by myself and whose color and TD I take great effor in verifying. Mostly Spanish brands due to obvious bias.
 
 ## Registering in HueForge
 
@@ -98,74 +8,26 @@ This scans `libraries/`, counts filaments in each `.json` file, computes SHA256 
 2. Click **+ Add Source**
 3. Paste the raw manifest URL:
    ```
-   https://raw.githubusercontent.com/your-username/your-repo/main/manifest.json
+   https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/main/manifest.json
    ```
 4. Click **OK** — HueForge will fetch and verify the manifest
 
-Your filaments now appear in the **Filaments** menu under **Community** with a badge showing your source.
+## About the UUIDs
 
-## Publishing Updates
+UUIDs for each filament follow the structure:
 
-1. Add or modify `.json` files in `libraries/`
-2. Commit and push to GitHub
-   ```bash
-   git add libraries/
-   git commit -m "Add acme-pla-v2 library"
-   git push origin main
-   ```
-3. The pre-commit hook automatically regenerates `manifest.json`
-4. HueForge users see updates when they refresh **Manage Community Sources**
-
-## Manifest Schema
-
-`manifest.json` is auto-generated and looks like:
-
-```json
-{
-  "source_name": "My PLA Collection",
-  "libraries": [
-    {
-      "name": "my-pla-filaments",
-      "filename": "my-pla-filaments.json",
-      "category": "community",
-      "url": "https://raw.githubusercontent.com/you/repo/main/libraries/my-pla-filaments.json",
-      "sha256": "a1b2c3d4...",
-      "filament_count": 42
-    }
-  ]
-}
+```
+{BRANDNAM-d0ry-DDMM-YYYY-FILAMENTNAME}
 ```
 
-**Fields:**
-- `source_name`: Display name for your collection (from config)
-- `name`: Stem of the filename (used as library ID)
-- `category`: Always `"community"` for user-contributed libraries
-- `url`: Full download URL (auto-constructed from `--base-url`)
-- `sha256`: Integrity check over normalized line endings
-- `filament_count`: Number of filaments in that library file
+Where `BRANDNAM` is the brandname, truncated or elongated to 8 characterts, `DD` and `MM` are the two-digit day and month of the upload of the filament, respectively, `YYYY` is the year of upload, and `FILAMENTNAME` is the name of the filament, including the material, truncated or elongated to 12 characters.
 
-## Troubleshooting
+This follows the HueForge library's UUID conventions while still being human-readable (somewhat), you'll thank me later.
 
-**"Pre-commit hook failed"**
-- Ensure Python 3 is installed and in PATH
-- Check that `generate_manifest.py` has execute permissions
-- Verify `--source-name` and `--base-url` are set in `.githooks/pre-commit`
+## Current brands
 
-**"No .json files in libraries/"**
-- The hook requires at least one `.json` file in `libraries/` to generate a manifest
-- If starting fresh, add a minimal test file temporarily
+We currently have the following brands in the library:
 
-**"SHA256 mismatch" in HueForge**
-- Ensure line endings in JSON files are consistent (CRLF vs LF)
-- The script normalizes to LF before hashing; if you edit files on mixed systems, recommend `.gitattributes`:
-  ```
-  *.json text eol=lf
-  ```
-
-## License
-
-This template is provided under the same license as HueForge (see the main HueForge repository).
-
-## Support
-
-For questions about filament format, integrating with HueForge, or community library architecture, refer to the [HueForge community documentation](https://github.com/HueForge/hueforge) or open an issue in the main repository.
+- Smartfil, by Smart Materials (`smartfil`)
+- León 3D (`leon3des`)
+- Sakata 3D (`sakata3d`)
