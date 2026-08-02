@@ -5,7 +5,7 @@
       "name": "leon3d",
       "filename": "leon3d.json",
       "category": "community",
-      "url": "https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/head/master/libraries/leon3d.json",
+      "url": "https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/heads/master/libraries/leon3d.json",
       "sha256": "a1d9253cfa4ee1e094d315aacfc365bb63c78644aa58acd0aaf3d6cf6a68df93",
       "filament_count": 1
     },
@@ -13,7 +13,7 @@
       "name": "sakata3d",
       "filename": "sakata3d.json",
       "category": "community",
-      "url": "https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/head/master/libraries/sakata3d.json",
+      "url": "https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/heads/master/libraries/sakata3d.json",
       "sha256": "0c93dd362a8509b47ab82c719c82ae4d55c254cb4ab3dbeb9d255e0db6a39503",
       "filament_count": 1
     },
@@ -21,7 +21,7 @@
       "name": "smartfil",
       "filename": "smartfil.json",
       "category": "community",
-      "url": "https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/head/master/libraries/smartfil.json",
+      "url": "https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/heads/master/libraries/smartfil.json",
       "sha256": "ada1f611df228e875316196211e2403c402ad5d0862b118ddb556b0b4b12eeb9",
       "filament_count": 11
     }
