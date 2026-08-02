@@ -8,7 +8,7 @@ This repository serves as a HueForge community library built of the filaments I'
 2. Click **+ Add Source**
 3. Paste the raw manifest URL:
    ```
-   https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/main/manifest.json
+   https://raw.githubusercontent.com/dorythecat/hueforge-filament-library/refs/heads/master/manifest.json
    ```
 4. Click **OK** — HueForge will fetch and verify the manifest
 
